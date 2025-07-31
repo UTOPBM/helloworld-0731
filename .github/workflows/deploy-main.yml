@@ -1,0 +1,183 @@
+name: Deploy to GCP VM (Ubuntu Optimized)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Ubuntu VM
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.GCP_VM_IP }}
+          username: ${{ secrets.GCP_VM_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          timeout: 30s
+          command_timeout: 10m
+          script: |
+            set -e
+            echo "🚀 Starting Ubuntu-optimized multi-service deployment..."
+            
+            PROJECT_NAME="${{ github.event.repository.name }}"
+            
+            # 홈 디렉토리로 이동
+            cd ~ || exit 1
+            
+            # 서비스 레지스트리 파일 초기화 (없으면 생성)
+            if [ ! -f "services-registry.json" ]; then
+              echo '{"version":"1.0","services":{},"next_ports":{"frontend":3000,"backend":8000},"last_updated":""}' > services-registry.json
+            fi
+            
+            # 현재 서비스 상황 확인
+            echo "📋 Current services status:"
+            cat services-registry.json | python3 -m json.tool || echo "Empty registry"
+            
+            # 서비스 포트 할당 함수
+            get_next_ports() {
+              FRONTEND_PORT=$(cat services-registry.json | python3 -c "
+            import json, sys
+            data = json.load(sys.stdin)
+            print(data.get('next_ports', {}).get('frontend', 3000))
+            " 2>/dev/null || echo "3000")
+              
+              BACKEND_PORT=$(cat services-registry.json | python3 -c "
+            import json, sys
+            data = json.load(sys.stdin)
+            print(data.get('next_ports', {}).get('backend', 8000))
+            " 2>/dev/null || echo "8000")
+              
+              echo "Next available ports: Frontend:$FRONTEND_PORT, Backend:$BACKEND_PORT"
+            }
+            
+            # 포트 할당
+            get_next_ports
+            
+            # 기존 프로젝트가 있다면 개별 서비스만 업데이트 (무중단)
+            if [ -d "$PROJECT_NAME" ]; then
+              echo "🔄 Updating existing service (zero-downtime)..."
+              cd "$PROJECT_NAME"
+              
+              # 코드 업데이트
+              git fetch origin main
+              git reset --hard origin/main
+              
+              # 개별 서비스만 재빌드 및 재시작 (Ubuntu Docker Compose 사용)
+              export PROJECT_NAME="$PROJECT_NAME"
+              docker compose build --parallel backend frontend
+              docker compose up -d --no-deps --force-recreate "${PROJECT_NAME}-backend" "${PROJECT_NAME}-frontend"
+              
+            else
+              echo "🆕 Deploying new service..."
+              
+              # 최신 코드 클론
+              git clone --depth 1 --single-branch --branch main "https://github.com/UTOPBM/$PROJECT_NAME.git"
+              cd "$PROJECT_NAME"
+              
+              # 환경변수 설정
+              export PROJECT_NAME="$PROJECT_NAME"
+              
+              # 서비스별 Nginx 설정 생성
+              mkdir -p nginx/conf.d
+              cat > nginx/conf.d/${PROJECT_NAME}.conf << NGINX_EOF
+            # $PROJECT_NAME service configuration
+            upstream ${PROJECT_NAME}_frontend {
+                server ${PROJECT_NAME}-frontend:80;
+            }
+            
+            upstream ${PROJECT_NAME}_backend {
+                server ${PROJECT_NAME}-backend:8000;
+            }
+            
+            # Frontend routes
+            location /${PROJECT_NAME}/ {
+                proxy_pass http://${PROJECT_NAME}_frontend/;
+                proxy_set_header Host \$host;
+                proxy_set_header X-Real-IP \$remote_addr;
+                proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto \$scheme;
+                
+                # WebSocket support for Hot Reloading
+                proxy_http_version 1.1;
+                proxy_set_header Upgrade \$http_upgrade;
+                proxy_set_header Connection "upgrade";
+            }
+            
+            # API routes  
+            location /api/${PROJECT_NAME}/ {
+                proxy_pass http://${PROJECT_NAME}_backend/api/;
+                proxy_set_header Host \$host;
+                proxy_set_header X-Real-IP \$remote_addr;
+                proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto \$scheme;
+            }
+            NGINX_EOF
+              
+              # Ubuntu Docker Compose로 빌드 및 시작
+              docker compose build --parallel
+              docker compose up -d
+              
+              # 서비스 레지스트리 업데이트
+              cd ~
+              python3 -c "
+            import json
+            from datetime import datetime
+            
+            # 레지스트리 읽기
+            try:
+                with open('services-registry.json', 'r') as f:
+                    registry = json.load(f)
+            except:
+                registry = {'version': '1.0', 'services': {}, 'next_ports': {'frontend': 3000, 'backend': 8000}}
+            
+            # 새 서비스 추가
+            registry['services']['$PROJECT_NAME'] = {
+                'frontend_port': $FRONTEND_PORT,
+                'backend_port': $BACKEND_PORT,
+                'path': '/$PROJECT_NAME',
+                'status': 'active',
+                'deployed_at': datetime.now().isoformat()
+            }
+            
+            # 다음 포트 업데이트
+            registry['next_ports']['frontend'] = $FRONTEND_PORT + 1
+            registry['next_ports']['backend'] = $BACKEND_PORT + 1
+            registry['last_updated'] = datetime.now().isoformat()
+            
+            # 저장
+            with open('services-registry.json', 'w') as f:
+                json.dump(registry, f, indent=2)
+            "
+            fi
+            
+            # Nginx 프록시가 실행 중이면 설정 새로고침 (0.1초 다운타임만)
+            if docker ps | grep -q nginx-proxy; then
+              echo "🔄 Reloading Nginx configuration..."
+              docker exec $(docker ps -qf "name=nginx-proxy") nginx -s reload || echo "Nginx reload skipped"
+            fi
+            
+            # 헬스체크
+            echo "⏳ Waiting for services to be ready..."
+            sleep 20
+            
+            echo "=== Final Status ==="
+            docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+            
+            echo "=== Health Check ==="
+            curl -f http://localhost/health && echo " ✅ Nginx Proxy OK" || echo " ❌ Nginx Proxy failed"
+            curl -f http://localhost/${PROJECT_NAME}/ && echo " ✅ Frontend OK" || echo " ❌ Frontend not ready"
+            curl -f http://localhost/api/${PROJECT_NAME}/health && echo " ✅ Backend OK" || echo " ❌ Backend not ready"
+            
+            echo ""
+            echo "✅ Multi-Service Deployment Complete!"
+            echo "🌐 Service Dashboard: http://34.71.236.217/"
+            echo "🎯 Your Service: http://34.71.236.217/${PROJECT_NAME}/"
+            echo "🔧 Your API: http://34.71.236.217/api/${PROJECT_NAME}/"
+            echo "📚 API Docs: http://34.71.236.217/api/${PROJECT_NAME}/docs"

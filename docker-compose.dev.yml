@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Nginx 리버스 프록시 (개발용)
+  nginx-proxy-dev:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: "${PROJECT_NAME:-helloworld-0731}-nginx-proxy-dev"
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./services-registry.json:/etc/nginx/services-registry.json:ro
+    depends_on:
+      - backend
+      - frontend
+    restart: unless-stopped
+
+  # 백엔드 개발 서비스
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    container_name: "${PROJECT_NAME:-helloworld-0731}-backend-dev"
+    expose:
+      - "8000"
+    volumes:
+      # 볼륨 마운트로 Hot Reloading 지원
+      - ./backend:/app
+      - /app/__pycache__  # Python 캐시 파일 제외
+    environment:
+      - ENVIRONMENT=development
+      - DEBUG=true
+      - PROJECT_NAME=${PROJECT_NAME:-helloworld-0731}
+    restart: unless-stopped
+
+  # 프론트엔드 개발 서비스
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    container_name: "${PROJECT_NAME:-helloworld-0731}-frontend-dev"
+    expose:
+      - "3000"
+    volumes:
+      # 볼륨 마운트로 Hot Reloading 지원
+      - ./frontend:/app
+      - /app/node_modules  # node_modules 제외 (성능 향상)
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # 파일 변경 감지 향상
+      - PROJECT_NAME=${PROJECT_NAME:-helloworld-0731}
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+networks:
+  default:
+    name: multi-service-dev-network

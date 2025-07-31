@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  # Nginx 리버스 프록시 (메인 엔트리포인트)
+  nginx-proxy:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: "${PROJECT_NAME:-helloworld-0731}-nginx-proxy"
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./services-registry.json:/etc/nginx/services-registry.json:ro
+    depends_on:
+      - backend
+      - frontend
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # 백엔드 서비스
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: "${PROJECT_NAME:-helloworld-0731}-backend"
+    expose:
+      - "8000"
+    environment:
+      - ENVIRONMENT=production
+      - PROJECT_NAME=${PROJECT_NAME:-helloworld-0731}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  # 프론트엔드 서비스
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: "${PROJECT_NAME:-helloworld-0731}-frontend"
+    expose:
+      - "80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+networks:
+  default:
+    name: multi-service-network

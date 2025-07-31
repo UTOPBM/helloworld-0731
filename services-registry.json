@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "services": {},
+  "next_ports": {
+    "frontend": 3000,
+    "backend": 8000
+  },
+  "last_updated": ""
+}
