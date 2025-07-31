@@ -1,0 +1,836 @@
+deploy	Set up job	﻿2025-07-31T01:13:04.3001305Z Current runner version: '2.327.1'
+deploy	Set up job	2025-07-31T01:13:04.3030826Z ##[group]Runner Image Provisioner
+deploy	Set up job	2025-07-31T01:13:04.3032244Z Hosted Compute Agent
+deploy	Set up job	2025-07-31T01:13:04.3033416Z Version: 20250711.363
+deploy	Set up job	2025-07-31T01:13:04.3034598Z Commit: 6785254374ce925a23743850c1cb91912ce5c14c
+deploy	Set up job	2025-07-31T01:13:04.3036031Z Build Date: 2025-07-11T20:04:25Z
+deploy	Set up job	2025-07-31T01:13:04.3037184Z ##[endgroup]
+deploy	Set up job	2025-07-31T01:13:04.3038277Z ##[group]Operating System
+deploy	Set up job	2025-07-31T01:13:04.3039389Z Ubuntu
+deploy	Set up job	2025-07-31T01:13:04.3040421Z 24.04.2
+deploy	Set up job	2025-07-31T01:13:04.3041458Z LTS
+deploy	Set up job	2025-07-31T01:13:04.3042422Z ##[endgroup]
+deploy	Set up job	2025-07-31T01:13:04.3043435Z ##[group]Runner Image
+deploy	Set up job	2025-07-31T01:13:04.3044575Z Image: ubuntu-24.04
+deploy	Set up job	2025-07-31T01:13:04.3045875Z Version: 20250728.1.0
+deploy	Set up job	2025-07-31T01:13:04.3047616Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250728.1/images/ubuntu/Ubuntu2404-Readme.md
+deploy	Set up job	2025-07-31T01:13:04.3049674Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250728.1
+deploy	Set up job	2025-07-31T01:13:04.3051566Z ##[endgroup]
+deploy	Set up job	2025-07-31T01:13:04.3053926Z ##[group]GITHUB_TOKEN Permissions
+deploy	Set up job	2025-07-31T01:13:04.3057427Z Contents: read
+deploy	Set up job	2025-07-31T01:13:04.3058601Z Metadata: read
+deploy	Set up job	2025-07-31T01:13:04.3059713Z Packages: read
+deploy	Set up job	2025-07-31T01:13:04.3060790Z ##[endgroup]
+deploy	Set up job	2025-07-31T01:13:04.3063555Z Secret source: Actions
+deploy	Set up job	2025-07-31T01:13:04.3065220Z Prepare workflow directory
+deploy	Set up job	2025-07-31T01:13:04.3385476Z Prepare all required actions
+deploy	Set up job	2025-07-31T01:13:04.3423055Z Getting action download info
+deploy	Set up job	2025-07-31T01:13:04.6445427Z ##[group]Download immutable action package 'actions/checkout@v4'
+deploy	Set up job	2025-07-31T01:13:04.6447399Z Version: 4.2.2
+deploy	Set up job	2025-07-31T01:13:04.6449071Z Digest: sha256:ccb2698953eaebd21c7bf6268a94f9c26518a7e38e27e0b83c1fe1ad049819b1
+deploy	Set up job	2025-07-31T01:13:04.6450947Z Source commit SHA: 11bd71901bbe5b1630ceea73d27597364c9af683
+deploy	Set up job	2025-07-31T01:13:04.6452333Z ##[endgroup]
+deploy	Set up job	2025-07-31T01:13:04.7368683Z Download action repository 'appleboy/ssh-action@v1.0.3' (SHA:029f5b4aeeeb58fdfe1410a5d17f967dacf36262)
+deploy	Set up job	2025-07-31T01:13:05.0500943Z Complete job name: deploy
+deploy	Build appleboy/ssh-action@v1.0.3	﻿2025-07-31T01:13:05.0951306Z ##[group]Build container for action use: '/home/runner/work/_actions/appleboy/ssh-action/v1.0.3/Dockerfile'.
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.1023035Z ##[command]/usr/bin/docker build -t ede9f3:ea8b0bf996f9468d9b6e2a408d53eef7 -f "/home/runner/work/_actions/appleboy/ssh-action/v1.0.3/Dockerfile" "/home/runner/work/_actions/appleboy/ssh-action/v1.0.3"
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.5350489Z #0 building with "default" instance using docker driver
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.5351487Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.5352086Z #1 [internal] load build definition from Dockerfile
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.5353420Z #1 transferring dockerfile: 149B done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.5354649Z #1 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.5355264Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.5356168Z #2 [internal] load metadata for ghcr.io/appleboy/drone-ssh:1.7.3
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.6731165Z #2 DONE 0.3s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7894294Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7896035Z #3 [internal] load .dockerignore
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7898140Z #3 transferring context: 2B done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7900018Z #3 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7901055Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7901852Z #4 [internal] load build context
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7903750Z #4 transferring context: 108B done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7905770Z #4 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7906758Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7908479Z #5 [1/2] FROM ghcr.io/appleboy/drone-ssh:1.7.3@sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7912506Z #5 resolve ghcr.io/appleboy/drone-ssh:1.7.3@sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158 done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7916327Z #5 extracting sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7919805Z #5 sha256:179cbd253771007f2ebcaf7a3860afe059207351de1f3378efafac93bd310158 2.38kB / 2.38kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7923743Z #5 sha256:1a52f94820e830bc9734623deb03bbafa6a248fba19cdc2e5605c70d90d91441 1.24kB / 1.24kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7928541Z #5 sha256:c4781b8d012b16b6c7468dc9104fad0a63f2a8815b2af8b7176bb544253ea8c7 3.86kB / 3.86kB done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7933304Z #5 sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 3.38MB / 3.38MB 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7938084Z #5 sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 284.83kB / 284.83kB 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7942832Z #5 sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c 1.20kB / 1.20kB 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7947223Z #5 sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 0B / 125B 0.1s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.7951255Z #5 sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 0B / 2.44MB 0.1s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.9098671Z #5 extracting sha256:1207c741d8c9b028d98c4006013f9de959da3c55f85b91ed5e4583438a0112ca 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.9102265Z #5 sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 125B / 125B 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.9105470Z #5 sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 2.44MB / 2.44MB 0.1s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:05.9109433Z #5 extracting sha256:654aaee5654be60f81172539ecd74485cf8bbe2e9137bab0d429862c31c676f6 0.0s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.0195388Z #5 extracting sha256:7e20f48a19643465f486f59127b8f4e0f4114bedc8bd5260fb4f92d5fda95f1c done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.0199704Z #5 extracting sha256:066e5b821e26d8313055e0314c056e6c297847bcf963e5df10e7aa03107f2246 done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.0203869Z #5 extracting sha256:47353a6f9201a145b687290e5ae0278ac269faf4bb61bee3e9246c37a8d74277 0.0s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.2188261Z #5 DONE 0.4s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.2188937Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.2189426Z #6 [2/2] COPY entrypoint.sh /bin/entrypoint.sh
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.2190561Z #6 DONE 0.0s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.2191026Z 
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.2191401Z #7 exporting to image
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:06.2192304Z #7 exporting layers
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:07.0056594Z #7 exporting layers 0.9s done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:07.0256983Z #7 writing image sha256:f1df6a22fd42860cf894133132f30144673e7cd2905cf5521288e06924e46533 done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:07.0258389Z #7 naming to docker.io/library/ede9f3:ea8b0bf996f9468d9b6e2a408d53eef7 done
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:07.0259788Z #7 DONE 0.9s
+deploy	Build appleboy/ssh-action@v1.0.3	2025-07-31T01:13:07.0319842Z ##[endgroup]
+deploy	Checkout code	﻿2025-07-31T01:13:07.0640955Z ##[group]Run actions/checkout@v4
+deploy	Checkout code	2025-07-31T01:13:07.0641732Z with:
+deploy	Checkout code	2025-07-31T01:13:07.0642095Z   repository: UTOPBM/helloworld-0731
+deploy	Checkout code	2025-07-31T01:13:07.0642672Z   token: ***
+deploy	Checkout code	2025-07-31T01:13:07.0643012Z   ssh-strict: true
+deploy	Checkout code	2025-07-31T01:13:07.0643364Z   ssh-user: git
+deploy	Checkout code	2025-07-31T01:13:07.0643717Z   persist-credentials: true
+deploy	Checkout code	2025-07-31T01:13:07.0644083Z   clean: true
+deploy	Checkout code	2025-07-31T01:13:07.0644427Z   sparse-checkout-cone-mode: true
+deploy	Checkout code	2025-07-31T01:13:07.0644824Z   fetch-depth: 1
+deploy	Checkout code	2025-07-31T01:13:07.0645152Z   fetch-tags: false
+deploy	Checkout code	2025-07-31T01:13:07.0645649Z   show-progress: true
+deploy	Checkout code	2025-07-31T01:13:07.0645998Z   lfs: false
+deploy	Checkout code	2025-07-31T01:13:07.0646325Z   submodules: false
+deploy	Checkout code	2025-07-31T01:13:07.0646682Z   set-safe-directory: true
+deploy	Checkout code	2025-07-31T01:13:07.0647582Z ##[endgroup]
+deploy	Checkout code	2025-07-31T01:13:07.1737580Z Syncing repository: UTOPBM/helloworld-0731
+deploy	Checkout code	2025-07-31T01:13:07.1740125Z ##[group]Getting Git version info
+deploy	Checkout code	2025-07-31T01:13:07.1741154Z Working directory is '/home/runner/work/helloworld-0731/helloworld-0731'
+deploy	Checkout code	2025-07-31T01:13:07.1742783Z [command]/usr/bin/git version
+deploy	Checkout code	2025-07-31T01:13:07.1743546Z git version 2.50.1
+deploy	Checkout code	2025-07-31T01:13:07.1766596Z ##[endgroup]
+deploy	Checkout code	2025-07-31T01:13:07.1787910Z Temporarily overriding HOME='/home/runner/work/_temp/b8681757-e8e2-41c9-86b1-eb19e0e73980' before making global git config changes
+deploy	Checkout code	2025-07-31T01:13:07.1789627Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Checkout code	2025-07-31T01:13:07.1794059Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/helloworld-0731/helloworld-0731
+deploy	Checkout code	2025-07-31T01:13:07.1829395Z Deleting the contents of '/home/runner/work/helloworld-0731/helloworld-0731'
+deploy	Checkout code	2025-07-31T01:13:07.1833137Z ##[group]Initializing the repository
+deploy	Checkout code	2025-07-31T01:13:07.1837802Z [command]/usr/bin/git init /home/runner/work/helloworld-0731/helloworld-0731
+deploy	Checkout code	2025-07-31T01:13:07.1908144Z hint: Using 'master' as the name for the initial branch. This default branch name
+deploy	Checkout code	2025-07-31T01:13:07.1909331Z hint: is subject to change. To configure the initial branch name to use in all
+deploy	Checkout code	2025-07-31T01:13:07.1910442Z hint: of your new repositories, which will suppress this warning, call:
+deploy	Checkout code	2025-07-31T01:13:07.1911195Z hint:
+deploy	Checkout code	2025-07-31T01:13:07.1911740Z hint: 	git config --global init.defaultBranch <name>
+deploy	Checkout code	2025-07-31T01:13:07.1912608Z hint:
+deploy	Checkout code	2025-07-31T01:13:07.1913416Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+deploy	Checkout code	2025-07-31T01:13:07.1914614Z hint: 'development'. The just-created branch can be renamed via this command:
+deploy	Checkout code	2025-07-31T01:13:07.1915805Z hint:
+deploy	Checkout code	2025-07-31T01:13:07.1916435Z hint: 	git branch -m <name>
+deploy	Checkout code	2025-07-31T01:13:07.1917130Z hint:
+deploy	Checkout code	2025-07-31T01:13:07.1918007Z hint: Disable this message with "git config set advice.defaultBranchName false"
+deploy	Checkout code	2025-07-31T01:13:07.1919357Z Initialized empty Git repository in /home/runner/work/helloworld-0731/helloworld-0731/.git/
+deploy	Checkout code	2025-07-31T01:13:07.1924277Z [command]/usr/bin/git remote add origin https://github.com/UTOPBM/helloworld-0731
+deploy	Checkout code	2025-07-31T01:13:07.1955279Z ##[endgroup]
+deploy	Checkout code	2025-07-31T01:13:07.1956583Z ##[group]Disabling automatic garbage collection
+deploy	Checkout code	2025-07-31T01:13:07.1959954Z [command]/usr/bin/git config --local gc.auto 0
+deploy	Checkout code	2025-07-31T01:13:07.1987389Z ##[endgroup]
+deploy	Checkout code	2025-07-31T01:13:07.1987987Z ##[group]Setting up auth
+deploy	Checkout code	2025-07-31T01:13:07.1993805Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Checkout code	2025-07-31T01:13:07.2021994Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Checkout code	2025-07-31T01:13:07.2287303Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Checkout code	2025-07-31T01:13:07.2315085Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Checkout code	2025-07-31T01:13:07.2529311Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+deploy	Checkout code	2025-07-31T01:13:07.2562390Z ##[endgroup]
+deploy	Checkout code	2025-07-31T01:13:07.2580232Z ##[group]Fetching the repository
+deploy	Checkout code	2025-07-31T01:13:07.2581231Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d70cbac9007b2c9a5274aa9edd549adb67331802:refs/remotes/origin/main
+deploy	Checkout code	2025-07-31T01:13:07.4299096Z From https://github.com/UTOPBM/helloworld-0731
+deploy	Checkout code	2025-07-31T01:13:07.4300043Z  * [new ref]         d70cbac9007b2c9a5274aa9edd549adb67331802 -> origin/main
+deploy	Checkout code	2025-07-31T01:13:07.4323647Z ##[endgroup]
+deploy	Checkout code	2025-07-31T01:13:07.4324623Z ##[group]Determining the checkout info
+deploy	Checkout code	2025-07-31T01:13:07.4326032Z ##[endgroup]
+deploy	Checkout code	2025-07-31T01:13:07.4331257Z [command]/usr/bin/git sparse-checkout disable
+deploy	Checkout code	2025-07-31T01:13:07.4409469Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+deploy	Checkout code	2025-07-31T01:13:07.4436036Z ##[group]Checking out the ref
+deploy	Checkout code	2025-07-31T01:13:07.4439334Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+deploy	Checkout code	2025-07-31T01:13:07.4496748Z Switched to a new branch 'main'
+deploy	Checkout code	2025-07-31T01:13:07.4499677Z branch 'main' set up to track 'origin/main'.
+deploy	Checkout code	2025-07-31T01:13:07.4505226Z ##[endgroup]
+deploy	Checkout code	2025-07-31T01:13:07.4537518Z [command]/usr/bin/git log -1 --format=%H
+deploy	Checkout code	2025-07-31T01:13:07.4558978Z d70cbac9007b2c9a5274aa9edd549adb67331802
+deploy	Deploy to Ubuntu VM	﻿2025-07-31T01:13:07.4804328Z ##[group]Run appleboy/ssh-action@v1.0.3
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4804795Z with:
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4805222Z   host: ***
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4805742Z   username: ***
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4820649Z   key: ***
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4820983Z   timeout: 30s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4821317Z   command_timeout: 10m
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4834035Z   script: set -e
+deploy	Deploy to Ubuntu VM	echo "🚀 Starting Ubuntu-optimized multi-service deployment..."
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	PROJECT_NAME="helloworld-0731"
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 홈 디렉토리로 이동
+deploy	Deploy to Ubuntu VM	cd ~ || exit 1
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 서비스 레지스트리 파일 초기화 (없으면 생성)
+deploy	Deploy to Ubuntu VM	if [ ! -f "services-registry.json" ]; then
+deploy	Deploy to Ubuntu VM	  echo '{"version":"1.0","services":{},"next_ports":{"frontend":3000,"backend":8000},"last_updated":""}' > services-registry.json
+deploy	Deploy to Ubuntu VM	fi
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 현재 서비스 상황 확인
+deploy	Deploy to Ubuntu VM	echo "📋 Current services status:"
+deploy	Deploy to Ubuntu VM	cat services-registry.json | python3 -m json.tool || echo "Empty registry"
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 서비스 포트 할당 함수
+deploy	Deploy to Ubuntu VM	get_next_ports() {
+deploy	Deploy to Ubuntu VM	  FRONTEND_PORT=$(cat services-registry.json | python3 -c "
+deploy	Deploy to Ubuntu VM	import json, sys
+deploy	Deploy to Ubuntu VM	data = json.load(sys.stdin)
+deploy	Deploy to Ubuntu VM	print(data.get('next_ports', {}).get('frontend', 3000))
+deploy	Deploy to Ubuntu VM	" 2>/dev/null || echo "3000")
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  BACKEND_PORT=$(cat services-registry.json | python3 -c "
+deploy	Deploy to Ubuntu VM	import json, sys
+deploy	Deploy to Ubuntu VM	data = json.load(sys.stdin)
+deploy	Deploy to Ubuntu VM	print(data.get('next_ports', {}).get('backend', 8000))
+deploy	Deploy to Ubuntu VM	" 2>/dev/null || echo "8000")
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  echo "Next available ports: Frontend:$FRONTEND_PORT, Backend:$BACKEND_PORT"
+deploy	Deploy to Ubuntu VM	}
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 포트 할당
+deploy	Deploy to Ubuntu VM	get_next_ports
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 기존 프로젝트가 있다면 개별 서비스만 업데이트 (무중단)
+deploy	Deploy to Ubuntu VM	if [ -d "$PROJECT_NAME" ]; then
+deploy	Deploy to Ubuntu VM	  echo "🔄 Updating existing service (zero-downtime)..."
+deploy	Deploy to Ubuntu VM	  cd "$PROJECT_NAME"
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  # 코드 업데이트
+deploy	Deploy to Ubuntu VM	  git fetch origin main
+deploy	Deploy to Ubuntu VM	  git reset --hard origin/main
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  # 개별 서비스만 재빌드 및 재시작 (Ubuntu Docker Compose 사용)
+deploy	Deploy to Ubuntu VM	  export PROJECT_NAME="$PROJECT_NAME"
+deploy	Deploy to Ubuntu VM	  docker compose build --parallel backend frontend
+deploy	Deploy to Ubuntu VM	  docker compose up -d --no-deps --force-recreate "${PROJECT_NAME}-backend" "${PROJECT_NAME}-frontend"
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	else
+deploy	Deploy to Ubuntu VM	  echo "🆕 Deploying new service..."
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  # 최신 코드 클론
+deploy	Deploy to Ubuntu VM	  git clone --depth 1 --single-branch --branch main "https://github.com/UTOPBM/$PROJECT_NAME.git"
+deploy	Deploy to Ubuntu VM	  cd "$PROJECT_NAME"
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  # 환경변수 설정
+deploy	Deploy to Ubuntu VM	  export PROJECT_NAME="$PROJECT_NAME"
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  # 서비스별 Nginx 설정 생성
+deploy	Deploy to Ubuntu VM	  mkdir -p nginx/conf.d
+deploy	Deploy to Ubuntu VM	  cat > nginx/conf.d/${PROJECT_NAME}.conf << NGINX_EOF
+deploy	Deploy to Ubuntu VM	# $PROJECT_NAME service configuration
+deploy	Deploy to Ubuntu VM	upstream ${PROJECT_NAME}_frontend {
+deploy	Deploy to Ubuntu VM	    server ${PROJECT_NAME}-frontend:80;
+deploy	Deploy to Ubuntu VM	}
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	upstream ${PROJECT_NAME}_backend {
+deploy	Deploy to Ubuntu VM	    server ${PROJECT_NAME}-backend:8000;
+deploy	Deploy to Ubuntu VM	}
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# Frontend routes
+deploy	Deploy to Ubuntu VM	location /${PROJECT_NAME}/ {
+deploy	Deploy to Ubuntu VM	    proxy_pass http://${PROJECT_NAME}_frontend/;
+deploy	Deploy to Ubuntu VM	    proxy_set_header Host \$host;
+deploy	Deploy to Ubuntu VM	    proxy_set_header X-Real-IP \$remote_addr;
+deploy	Deploy to Ubuntu VM	    proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+deploy	Deploy to Ubuntu VM	    proxy_set_header X-Forwarded-Proto \$scheme;
+deploy	Deploy to Ubuntu VM	    
+deploy	Deploy to Ubuntu VM	    # WebSocket support for Hot Reloading
+deploy	Deploy to Ubuntu VM	    proxy_http_version 1.1;
+deploy	Deploy to Ubuntu VM	    proxy_set_header Upgrade \$http_upgrade;
+deploy	Deploy to Ubuntu VM	    proxy_set_header Connection "upgrade";
+deploy	Deploy to Ubuntu VM	}
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# API routes  
+deploy	Deploy to Ubuntu VM	location /api/${PROJECT_NAME}/ {
+deploy	Deploy to Ubuntu VM	    proxy_pass http://${PROJECT_NAME}_backend/api/;
+deploy	Deploy to Ubuntu VM	    proxy_set_header Host \$host;
+deploy	Deploy to Ubuntu VM	    proxy_set_header X-Real-IP \$remote_addr;
+deploy	Deploy to Ubuntu VM	    proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+deploy	Deploy to Ubuntu VM	    proxy_set_header X-Forwarded-Proto \$scheme;
+deploy	Deploy to Ubuntu VM	}
+deploy	Deploy to Ubuntu VM	NGINX_EOF
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  # Ubuntu Docker Compose로 빌드 및 시작
+deploy	Deploy to Ubuntu VM	  docker compose build --parallel
+deploy	Deploy to Ubuntu VM	  docker compose up -d
+deploy	Deploy to Ubuntu VM	  
+deploy	Deploy to Ubuntu VM	  # 서비스 레지스트리 업데이트
+deploy	Deploy to Ubuntu VM	  cd ~
+deploy	Deploy to Ubuntu VM	  python3 -c "
+deploy	Deploy to Ubuntu VM	import json
+deploy	Deploy to Ubuntu VM	from datetime import datetime
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 레지스트리 읽기
+deploy	Deploy to Ubuntu VM	try:
+deploy	Deploy to Ubuntu VM	    with open('services-registry.json', 'r') as f:
+deploy	Deploy to Ubuntu VM	        registry = json.load(f)
+deploy	Deploy to Ubuntu VM	except:
+deploy	Deploy to Ubuntu VM	    registry = {'version': '1.0', 'services': {}, 'next_ports': {'frontend': 3000, 'backend': 8000}}
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 새 서비스 추가
+deploy	Deploy to Ubuntu VM	registry['services']['$PROJECT_NAME'] = {
+deploy	Deploy to Ubuntu VM	    'frontend_port': $FRONTEND_PORT,
+deploy	Deploy to Ubuntu VM	    'backend_port': $BACKEND_PORT,
+deploy	Deploy to Ubuntu VM	    'path': '/$PROJECT_NAME',
+deploy	Deploy to Ubuntu VM	    'status': 'active',
+deploy	Deploy to Ubuntu VM	    'deployed_at': datetime.now().isoformat()
+deploy	Deploy to Ubuntu VM	}
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 다음 포트 업데이트
+deploy	Deploy to Ubuntu VM	registry['next_ports']['frontend'] = $FRONTEND_PORT + 1
+deploy	Deploy to Ubuntu VM	registry['next_ports']['backend'] = $BACKEND_PORT + 1
+deploy	Deploy to Ubuntu VM	registry['last_updated'] = datetime.now().isoformat()
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 저장
+deploy	Deploy to Ubuntu VM	with open('services-registry.json', 'w') as f:
+deploy	Deploy to Ubuntu VM	    json.dump(registry, f, indent=2)
+deploy	Deploy to Ubuntu VM	"
+deploy	Deploy to Ubuntu VM	fi
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# Nginx 프록시가 실행 중이면 설정 새로고침 (0.1초 다운타임만)
+deploy	Deploy to Ubuntu VM	if docker ps | grep -q nginx-proxy; then
+deploy	Deploy to Ubuntu VM	  echo "🔄 Reloading Nginx configuration..."
+deploy	Deploy to Ubuntu VM	  docker exec $(docker ps -qf "name=nginx-proxy") nginx -s reload || echo "Nginx reload skipped"
+deploy	Deploy to Ubuntu VM	fi
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	# 헬스체크
+deploy	Deploy to Ubuntu VM	echo "⏳ Waiting for services to be ready..."
+deploy	Deploy to Ubuntu VM	sleep 20
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	echo "=== Final Status ==="
+deploy	Deploy to Ubuntu VM	docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	echo "=== Health Check ==="
+deploy	Deploy to Ubuntu VM	curl -f http://localhost/health && echo " ✅ Nginx Proxy OK" || echo " ❌ Nginx Proxy failed"
+deploy	Deploy to Ubuntu VM	curl -f http://localhost/${PROJECT_NAME}/ && echo " ✅ Frontend OK" || echo " ❌ Frontend not ready"
+deploy	Deploy to Ubuntu VM	curl -f http://localhost/api/${PROJECT_NAME}/health && echo " ✅ Backend OK" || echo " ❌ Backend not ready"
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	echo ""
+deploy	Deploy to Ubuntu VM	echo "✅ Multi-Service Deployment Complete!"
+deploy	Deploy to Ubuntu VM	echo "🌐 Service Dashboard: http://***/"
+deploy	Deploy to Ubuntu VM	echo "🎯 Your Service: http://***/${PROJECT_NAME}/"
+deploy	Deploy to Ubuntu VM	echo "🔧 Your API: http://***/api/${PROJECT_NAME}/"
+deploy	Deploy to Ubuntu VM	echo "📚 API Docs: http://***/api/${PROJECT_NAME}/docs"
+deploy	Deploy to Ubuntu VM	
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4847538Z   port: 22
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4847881Z   proxy_port: 22
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4848218Z   proxy_timeout: 30s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4848562Z ##[endgroup]
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.4990373Z ##[command]/usr/bin/docker run --name ede9f3ea8b0bf996f9468d9b6e2a408d53eef7_b9c0ca --label ede9f3 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_SCRIPT" -e "INPUT_PORT" -e "INPUT_PASSPHRASE" -e "INPUT_PASSWORD" -e "INPUT_SYNC" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_CIPHER" -e "INPUT_KEY_PATH" -e "INPUT_FINGERPRINT" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_CIPHER" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "INPUT_SCRIPT_STOP" -e "INPUT_ENVS" -e "INPUT_ENVS_FORMAT" -e "INPUT_DEBUG" -e "INPUT_ALLENVS" -e "INPUT_REQUEST_PTY" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/helloworld-0731/helloworld-0731":"/github/workspace" ede9f3:ea8b0bf996f9468d9b6e2a408d53eef7
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6700369Z ======CMD======
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6701070Z set -e
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6702123Z echo "🚀 Starting Ubuntu-optimized multi-service deployment..."
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6702744Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6703047Z PROJECT_NAME="helloworld-0731"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6703527Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6703868Z # 홈 디렉토리로 이동
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6704422Z cd ~ || exit 1
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6704732Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6705106Z # 서비스 레지스트리 파일 초기화 (없으면 생성)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6705994Z if [ ! -f "services-registry.json" ]; then
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6707067Z   echo '{"version":"1.0","services":{},"next_ports":{"frontend":3000,"backend":8000},"last_updated":""}' > services-registry.json
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6707745Z fi
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6707925Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6708156Z # 현재 서비스 상황 확인
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6708996Z echo "📋 Current services status:"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6709778Z cat services-registry.json | python3 -m json.tool || echo "Empty registry"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6710183Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6710527Z # 서비스 포트 할당 함수
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6710918Z get_next_ports() {
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6711369Z   FRONTEND_PORT=$(cat services-registry.json | python3 -c "
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6711877Z import json, sys
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6712257Z data = json.load(sys.stdin)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6712931Z print(data.get('next_ports', {}).get('frontend', 3000))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6713430Z " 2>/dev/null || echo "3000")
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6713817Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6714232Z   BACKEND_PORT=$(cat services-registry.json | python3 -c "
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6714712Z import json, sys
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6715076Z data = json.load(sys.stdin)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6715783Z print(data.get('next_ports', {}).get('backend', 8000))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6716272Z " 2>/dev/null || echo "8000")
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6716678Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6717140Z   echo "Next available ports: Frontend:$FRONTEND_PORT, Backend:$BACKEND_PORT"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6717683Z }
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6717856Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6718086Z # 포트 할당
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6718456Z get_next_ports
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6718652Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6718896Z # 기존 프로젝트가 있다면 개별 서비스만 업데이트 (무중단)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6719314Z if [ -d "$PROJECT_NAME" ]; then
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6719819Z   echo "🔄 Updating existing service (zero-downtime)..."
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6720325Z   cd "$PROJECT_NAME"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6720694Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6721065Z   # 코드 업데이트
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6721418Z   git fetch origin main
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6721812Z   git reset --hard origin/main
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6722212Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6722643Z   # 개별 서비스만 재빌드 및 재시작 (Ubuntu Docker Compose 사용)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6723118Z   export PROJECT_NAME="$PROJECT_NAME"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6723578Z   docker compose build --parallel backend frontend
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6724270Z   docker compose up -d --no-deps --force-recreate "${PROJECT_NAME}-backend" "${PROJECT_NAME}-frontend"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6724891Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6725218Z else
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6725774Z   echo "🆕 Deploying new service..."
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6726188Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6726568Z   # 최신 코드 클론
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6727221Z   git clone --depth 1 --single-branch --branch main "https://github.com/UTOPBM/$PROJECT_NAME.git"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6727839Z   cd "$PROJECT_NAME"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6728249Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6728597Z   # 환경변수 설정
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6728985Z   export PROJECT_NAME="$PROJECT_NAME"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6729384Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6729760Z   # 서비스별 Nginx 설정 생성
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6730156Z   mkdir -p nginx/conf.d
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6730576Z   cat > nginx/conf.d/${PROJECT_NAME}.conf << NGINX_EOF
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6731048Z # $PROJECT_NAME service configuration
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6731478Z upstream ${PROJECT_NAME}_frontend {
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6731906Z     server ${PROJECT_NAME}-frontend:80;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6732359Z }
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6732524Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6732719Z upstream ${PROJECT_NAME}_backend {
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6733146Z     server ${PROJECT_NAME}-backend:8000;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6733574Z }
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6733753Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6733944Z # Frontend routes
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6734326Z location /${PROJECT_NAME}/ {
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6734760Z     proxy_pass http://${PROJECT_NAME}_frontend/;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6735241Z     proxy_set_header Host \$host;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6735880Z     proxy_set_header X-Real-IP \$remote_addr;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6736405Z     proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6736946Z     proxy_set_header X-Forwarded-Proto \$scheme;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6737397Z     
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6737779Z     # WebSocket support for Hot Reloading
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6738241Z     proxy_http_version 1.1;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6738664Z     proxy_set_header Upgrade \$http_upgrade;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6739330Z     proxy_set_header Connection "upgrade";
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6739753Z }
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6739923Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6740099Z # API routes  
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6740475Z location /api/${PROJECT_NAME}/ {
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6740933Z     proxy_pass http://${PROJECT_NAME}_backend/api/;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6741425Z     proxy_set_header Host \$host;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6741853Z     proxy_set_header X-Real-IP \$remote_addr;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6742372Z     proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6743028Z     proxy_set_header X-Forwarded-Proto \$scheme;
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6743476Z }
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6743823Z NGINX_EOF
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6744173Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6744628Z   # Ubuntu Docker Compose로 빌드 및 시작
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6745090Z   docker compose build --parallel
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6745688Z   docker compose up -d
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6746154Z   
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6746553Z   # 서비스 레지스트리 업데이트
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6746915Z   cd ~
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6747303Z   python3 -c "
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6747677Z import json
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6748049Z from datetime import datetime
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6748279Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6748480Z # 레지스트리 읽기
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6748815Z try:
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6749196Z     with open('services-registry.json', 'r') as f:
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6749673Z         registry = json.load(f)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6750064Z except:
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6750559Z     registry = {'version': '1.0', 'services': {}, 'next_ports': {'frontend': 3000, 'backend': 8000}}
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6750975Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6751173Z # 새 서비스 추가
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6751551Z registry['services']['$PROJECT_NAME'] = {
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6752019Z     'frontend_port': $FRONTEND_PORT,
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6752461Z     'backend_port': $BACKEND_PORT,
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6752883Z     'path': '/$PROJECT_NAME',
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6753291Z     'status': 'active',
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6753706Z     'deployed_at': datetime.now().isoformat()
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6754157Z }
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6754330Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6754536Z # 다음 포트 업데이트
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6754958Z registry['next_ports']['frontend'] = $FRONTEND_PORT + 1
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6755472Z registry['next_ports']['backend'] = $BACKEND_PORT + 1
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6756096Z registry['last_updated'] = datetime.now().isoformat()
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6756387Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6756598Z # 저장
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6756975Z with open('services-registry.json', 'w') as f:
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6757513Z     json.dump(registry, f, indent=2)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6757928Z "
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6758263Z fi
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6758425Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6758691Z # Nginx 프록시가 실행 중이면 설정 새로고침 (0.1초 다운타임만)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6759139Z if docker ps | grep -q nginx-proxy; then
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6759649Z   echo "🔄 Reloading Nginx configuration..."
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6760276Z   docker exec $(docker ps -qf "name=nginx-proxy") nginx -s reload || echo "Nginx reload skipped"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6760848Z fi
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6761042Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6761246Z # 헬스체크
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6761654Z echo "⏳ Waiting for services to be ready..."
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6762097Z sleep 20
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6762272Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6762448Z echo "=== Final Status ==="
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6762912Z docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6763255Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6763434Z echo "=== Health Check ==="
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6764086Z curl -f http://localhost/health && echo " ✅ Nginx Proxy OK" || echo " ❌ Nginx Proxy failed"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6764953Z curl -f http://localhost/${PROJECT_NAME}/ && echo " ✅ Frontend OK" || echo " ❌ Frontend not ready"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6765917Z curl -f http://localhost/api/${PROJECT_NAME}/health && echo " ✅ Backend OK" || echo " ❌ Backend not ready"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6766379Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6766543Z echo ""
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6766967Z echo "✅ Multi-Service Deployment Complete!"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6767651Z echo "🌐 Service Dashboard: http://***/"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6768439Z echo "🎯 Your Service: http://***/${PROJECT_NAME}/"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6769028Z echo "🔧 Your API: http://***/api/${PROJECT_NAME}/"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6769620Z echo "📚 API Docs: http://***/api/${PROJECT_NAME}/docs"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6769918Z 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:07.6770095Z ======END======
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.2428521Z out: 🚀 Starting Ubuntu-optimized multi-service deployment...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.2429514Z out: 📋 Current services status:
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3355162Z out: {
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3356139Z out:     "version": "1.0",
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3356997Z out:     "services": {},
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3357818Z out:     "next_ports": {
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3358625Z out:         "frontend": 3000,
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3359456Z out:         "backend": 8000
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3360073Z out:     },
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3360703Z out:     "last_updated": ""
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.3361447Z out: }
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.4428660Z out: Next available ports: Frontend:3000, Backend:8000
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:10.4430150Z out: 🔄 Updating existing service (zero-downtime)...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:11.2714752Z err: From https://github.com/UTOPBM/helloworld-0731
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:11.2716161Z err:  * branch            main       -> FETCH_HEAD
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:11.2817466Z err:    f4b0123..d70cbac  main       -> origin/main
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:11.3896127Z out: HEAD is now at d70cbac fix: change npm ci to npm install for Docker build
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:16.6031464Z err: time="2025-07-31T01:13:16Z" level=warning msg="/home/***/helloworld-0731/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:20.4360580Z out: #1 [internal] load local bake definitions
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:20.5865968Z out: #1 reading from stdin 1.01kB done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:20.5866646Z out: #1 DONE 0.0s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:20.8461665Z out: #2 [frontend internal] load build definition from Dockerfile
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:20.8462815Z out: #2 transferring dockerfile: 902B done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:20.8463815Z out: #2 DONE 0.1s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:20.8464767Z out: #3 [backend internal] load build definition from Dockerfile
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:20.8466106Z out: #3 transferring dockerfile: 867B 0.0s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.0425799Z out: #3 DONE 0.1s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.0426611Z out: #4 [frontend internal] load metadata for docker.io/library/node:18-alpine
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.5447298Z out: #4 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.5448408Z out: #5 [backend internal] load metadata for docker.io/library/python:3.11-alpine
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.5449455Z out: #5 DONE 0.7s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.6581292Z out: #4 [frontend internal] load metadata for docker.io/library/node:18-alpine
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.6582097Z out: #4 DONE 0.7s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.6582640Z out: #6 [backend internal] load .dockerignore
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.6583269Z out: #6 transferring context: 2B done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.6583807Z out: #6 DONE 0.0s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.6584329Z out: #7 [frontend internal] load metadata for docker.io/library/nginx:alpine
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.6584883Z out: #7 DONE 0.7s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.6585265Z out: #8 [frontend internal] load .dockerignore
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7658644Z out: #8 transferring context: 2B 0.0s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7659737Z out: #8 DONE 0.1s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7661418Z out: #9 [backend builder 1/5] FROM docker.io/library/python:3.11-alpine@sha256:9ce54d7ed458f71129c977478dd106cf6165a49b73fa38c217cc54de8f3e2bd0
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7663239Z out: #9 CACHED
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7664104Z out: #10 [backend internal] load build context
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7664949Z out: #10 transferring context: 263B 0.0s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7665853Z out: #10 DONE 0.1s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7666625Z out: #11 [frontend builder 1/6] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3ebc498332f249011d118945588d0a35cb9bc4b8ca09d9e
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7667415Z out: #11 DONE 0.0s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7668171Z out: #12 [frontend production 1/4] FROM docker.io/library/nginx:alpine@sha256:d67ea0d64d518b1bb04acde3b00f722ac3e9764b3209a9b0a98924ba35e4b779
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7669232Z out: #12 CACHED
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.7669625Z out: #13 [frontend internal] load build context
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9595040Z out: #13 transferring context: 1.28kB 0.0s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9595819Z out: #13 DONE 0.0s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9596363Z out: #14 [backend builder 2/5] RUN apk add --no-cache gcc musl-dev
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9596967Z out: #14 CACHED
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9597406Z out: #15 [backend builder 3/5] WORKDIR /app
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9598131Z out: #15 CACHED
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9598608Z out: #16 [backend builder 4/5] COPY requirements.txt .
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9599136Z out: #16 CACHED
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:21.9599740Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:22.3126801Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:22.3127634Z out: #18 [frontend builder 2/6] WORKDIR /app
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:22.3128572Z out: #18 CACHED
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:22.3129481Z out: #19 [frontend builder 3/6] COPY package*.json ./
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:22.3130463Z out: #19 CACHED
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:22.4726087Z out: #20 [frontend builder 4/6] RUN npm install --silent
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.7127474Z out: #20 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.7499500Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.7506618Z out: #17 17.08 Collecting fastapi==0.115.6 (from -r requirements.txt (line 1))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.8243995Z out: #17 17.17   Downloading fastapi-0.115.6-py3-none-any.whl.metadata (27 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9608574Z out: #17 17.37 Collecting uvicorn==0.32.1 (from uvicorn[standard]==0.32.1->-r requirements.txt (line 2))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9609917Z out: #17 17.40   Downloading uvicorn-0.32.1-py3-none-any.whl.metadata (6.6 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9611104Z out: #17 17.53 Collecting httpx==0.28.1 (from -r requirements.txt (line 3))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9612128Z out: #17 17.56   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9613325Z out: #17 17.63 Collecting python-multipart==0.0.20 (from -r requirements.txt (line 4))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9614607Z out: #17 17.65   Downloading python_multipart-0.0.20-py3-none-any.whl.metadata (1.8 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9615984Z out: #17 18.31 Collecting pydantic==2.10.4 (from -r requirements.txt (line 5))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9616732Z out: #17 18.33   Downloading pydantic-2.10.4-py3-none-any.whl.metadata (29 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9617497Z out: #17 18.39 Collecting python-dotenv==1.0.1 (from -r requirements.txt (line 6))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9618273Z out: #17 18.40   Downloading python_dotenv-1.0.1-py3-none-any.whl.metadata (23 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9618983Z out: #17 18.46 Collecting cors==1.0.1 (from -r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9619657Z out: #17 18.48   Downloading cors-1.0.1-py3-none-any.whl.metadata (9.3 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9620360Z out: #17 18.64 Collecting starlette<0.42.0,>=0.40.0 (from fastapi==0.115.6->-r requirements.txt (line 1))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9621095Z out: #17 18.66   Downloading starlette-0.41.3-py3-none-any.whl.metadata (6.0 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9621840Z out: #17 18.74 Collecting typing-extensions>=4.8.0 (from fastapi==0.115.6->-r requirements.txt (line 1))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9622609Z out: #17 18.75   Downloading typing_extensions-4.14.1-py3-none-any.whl.metadata (3.0 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9623391Z out: #17 18.83 Collecting click>=7.0 (from uvicorn==0.32.1->uvicorn[standard]==0.32.1->-r requirements.txt (line 2))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9624122Z out: #17 18.85   Downloading click-8.2.1-py3-none-any.whl.metadata (2.5 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9624847Z out: #17 18.88 Collecting h11>=0.8 (from uvicorn==0.32.1->uvicorn[standard]==0.32.1->-r requirements.txt (line 2))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9625745Z out: #17 18.90   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9626390Z out: #17 19.03 Collecting anyio (from httpx==0.28.1->-r requirements.txt (line 3))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9627018Z out: #17 19.03   Downloading anyio-4.9.0-py3-none-any.whl.metadata (4.7 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9627656Z out: #17 19.13 Collecting certifi (from httpx==0.28.1->-r requirements.txt (line 3))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9628571Z out: #17 19.13   Downloading certifi-2025.7.14-py3-none-any.whl.metadata (2.4 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:40.9629258Z out: #17 19.20 Collecting httpcore==1.* (from httpx==0.28.1->-r requirements.txt (line 3))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:41.0687754Z out: #17 19.22   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:41.0689236Z out: #17 19.29 Collecting idna (from httpx==0.28.1->-r requirements.txt (line 3))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:41.0690823Z out: #17 19.31   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:41.2772645Z out: #17 19.35 Collecting annotated-types>=0.6.0 (from pydantic==2.10.4->-r requirements.txt (line 5))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:41.2773709Z out: #17 19.36   Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:44.8040508Z out: #17 23.04 Collecting pydantic-core==2.27.2 (from pydantic==2.10.4->-r requirements.txt (line 5))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:44.9612719Z out: #17 23.06   Downloading pydantic_core-2.27.2-cp311-cp311-musllinux_1_1_x86_64.whl.metadata (6.6 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:44.9613822Z out: #17 23.12 Collecting colorama (from cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:44.9614761Z out: #17 23.14   Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:44.9615478Z out: #17 23.20 Collecting requests (from cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.1727330Z out: #17 23.22   Downloading requests-2.32.4-py3-none-any.whl.metadata (4.9 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.1728327Z out: #17 23.25 Collecting argparse (from cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.1729162Z out: #17 23.26   Downloading argparse-1.4.0-py2.py3-none-any.whl.metadata (2.8 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.2887295Z out: #17 23.53 Collecting gevent (from cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.4026357Z out: #17 23.56   Downloading gevent-25.5.1-cp311-cp311-musllinux_1_2_x86_64.whl.metadata (13 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.4027764Z out: #17 23.62 Collecting tldextract (from cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.4029009Z out: #17 23.64   Downloading tldextract-5.3.0-py3-none-any.whl.metadata (11 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.5159172Z out: #17 23.70 Collecting future (from cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.5160549Z out: #17 23.72   Downloading future-1.0.0-py3-none-any.whl.metadata (4.0 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.5161778Z out: #17 23.76 Collecting PySocks (from cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.6887792Z out: #17 23.78   Downloading PySocks-1.7.1-py3-none-any.whl.metadata (13 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.7101378Z out: #17 23.95 Collecting httptools>=0.6.3 (from uvicorn[standard]==0.32.1->-r requirements.txt (line 2))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.8899948Z out: #17 23.98   Downloading httptools-0.6.4-cp311-cp311-musllinux_1_2_x86_64.whl.metadata (3.6 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:45.8963393Z out: #17 24.14 Collecting pyyaml>=5.1 (from uvicorn[standard]==0.32.1->-r requirements.txt (line 2))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.0358786Z out: #17 24.16   Downloading PyYAML-6.0.2-cp311-cp311-musllinux_1_1_x86_64.whl.metadata (2.1 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.0359858Z out: #17 24.27 Collecting uvloop!=0.15.0,!=0.15.1,>=0.14.0 (from uvicorn[standard]==0.32.1->-r requirements.txt (line 2))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.1967435Z out: #17 24.29   Downloading uvloop-0.21.0-cp311-cp311-musllinux_1_2_x86_64.whl.metadata (4.9 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.3881376Z out: #17 24.63 Collecting watchfiles>=0.13 (from uvicorn[standard]==0.32.1->-r requirements.txt (line 2))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.6337570Z out: #17 24.65   Downloading watchfiles-1.1.0-cp311-cp311-musllinux_1_1_x86_64.whl.metadata (4.9 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.6494957Z out: #17 24.89 Collecting websockets>=10.4 (from uvicorn[standard]==0.32.1->-r requirements.txt (line 2))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.8184405Z out: #17 24.91   Downloading websockets-15.0.1-cp311-cp311-musllinux_1_2_x86_64.whl.metadata (6.8 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.8687717Z out: #17 25.11 Collecting sniffio>=1.1 (from anyio->httpx==0.28.1->-r requirements.txt (line 3))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:46.8688982Z out: #17 25.11   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:47.3617922Z out: #17 25.60 Collecting greenlet>=3.2.2 (from gevent->cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:47.5910453Z out: #17 25.62   Downloading greenlet-3.2.3-cp311-cp311-musllinux_1_1_x86_64.whl.metadata (4.1 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:47.5911625Z out: #17 25.65 Collecting zope.event (from gevent->cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:47.5912861Z out: #17 25.67   Downloading zope_event-5.1.1-py3-none-any.whl.metadata (5.0 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:47.8316819Z out: #17 26.07 Collecting zope.interface (from gevent->cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:48.0749974Z out: #17 26.09   Downloading zope.interface-7.2.tar.gz (252 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:48.0751018Z out: #17 26.16      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 253.0/253.0 kB 190.6 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:13:48.0751703Z out: #17 26.31   Installing build dependencies: started
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:00.8724206Z out: #17 39.11   Installing build dependencies: finished with status 'done'
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:01.1076138Z out: #17 39.12   Getting requirements to build wheel: started
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:12.8873009Z out: #17 51.13   Getting requirements to build wheel: finished with status 'done'
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:13.1217177Z out: #17 51.36   Preparing metadata (pyproject.toml): started
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:23.6119908Z out: #17 61.85   Preparing metadata (pyproject.toml): finished with status 'done'
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:34.1351353Z out: #17 72.37 Collecting charset_normalizer<4,>=2 (from requests->cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:34.1352546Z out: #17 72.37   Downloading charset_normalizer-3.4.2-cp311-cp311-musllinux_1_2_x86_64.whl.metadata (35 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:36.3832189Z out: #17 74.63 Collecting urllib3<3,>=1.21.1 (from requests->cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:36.6221897Z out: #17 74.86   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:39.6097456Z out: #17 77.85 Collecting requests-file>=1.4 (from tldextract->cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:39.8584804Z out: #17 77.87   Downloading requests_file-2.1.0-py2.py3-none-any.whl.metadata (1.7 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:40.6137864Z out: #17 78.86 Collecting filelock>=3.0.8 (from tldextract->cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:40.8573492Z out: #17 78.87   Downloading filelock-3.18.0-py3-none-any.whl.metadata (2.9 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:50.8669179Z out: #17 89.11 Collecting setuptools>=75.8.2 (from zope.event->gevent->cors==1.0.1->-r requirements.txt (line 7))
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:51.1074265Z out: #17 89.12   Downloading setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:53.3574811Z out: #17 91.38 Downloading fastapi-0.115.6-py3-none-any.whl (94 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:53.6075322Z out: #17 91.62    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.8/94.8 kB 69.7 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:53.6125412Z out: #17 91.86 Downloading uvicorn-0.32.1-py3-none-any.whl (63 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:53.8577835Z out: #17 91.87    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.8/63.8 kB 64.1 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:53.8630562Z out: #17 92.11 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:54.1070895Z out: #17 92.12    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 77.1 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:54.1094257Z out: #17 92.35 Downloading python_multipart-0.0.20-py3-none-any.whl (24 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:54.3588000Z out: #17 92.38 Downloading pydantic-2.10.4-py3-none-any.whl (431 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:54.8572529Z out: #17 92.87    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 431.8/431.8 kB 1.7 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:54.8657804Z out: #17 93.11 Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:55.1087270Z out: #17 93.13 Downloading cors-1.0.1-py3-none-any.whl (2.3 MB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:56.3572677Z out: #17 94.36    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 2.2 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:56.3573845Z out: #17 94.38 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:56.6073460Z out: #17 94.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 75.7 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:56.6074468Z out: #17 94.63 Downloading pydantic_core-2.27.2-cp311-cp311-musllinux_1_1_x86_64.whl (2.2 MB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:57.6070492Z out: #17 95.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 2.9 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:57.6092519Z out: #17 95.85 Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:57.8571810Z out: #17 95.87 Downloading click-8.2.1-py3-none-any.whl (102 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:58.1076332Z out: #17 96.11    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.2/102.2 kB 15.2 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:58.1077140Z out: #17 96.13 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:58.1120992Z out: #17 96.35 Downloading httptools-0.6.4-cp311-cp311-musllinux_1_2_x86_64.whl (434 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:58.3573239Z out: #17 96.37    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 434.1/434.1 kB 69.6 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:58.3619239Z out: #17 96.60 Downloading PyYAML-6.0.2-cp311-cp311-musllinux_1_1_x86_64.whl (756 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:59.1076281Z out: #17 97.10    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 756.6/756.6 kB 2.8 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:59.1077099Z out: #17 97.12 Downloading starlette-0.41.3-py3-none-any.whl (73 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:59.3596427Z out: #17 97.36    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.2/73.2 kB 72.4 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:59.3618390Z out: #17 97.60 Downloading anyio-4.9.0-py3-none-any.whl (100 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:59.6075795Z out: #17 97.62    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.9/100.9 kB 42.5 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:59.6111933Z out: #17 97.85 Downloading idna-3.10-py3-none-any.whl (70 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:59.8572515Z out: #17 97.86    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 67.4 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:14:59.8660581Z out: #17 98.11 Downloading typing_extensions-4.14.1-py3-none-any.whl (43 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:00.1076900Z out: #17 98.12    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 kB 72.1 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:00.1127144Z out: #17 98.36 Downloading uvloop-0.21.0-cp311-cp311-musllinux_1_2_x86_64.whl (3.9 MB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:01.6079052Z out: #17 99.61    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 3.2 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:01.6080943Z out: #17 99.63 Downloading watchfiles-1.1.0-cp311-cp311-musllinux_1_1_x86_64.whl (624 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:01.8673481Z out: #17 99.87    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 624.5/624.5 kB 2.6 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.1099929Z out: #17 100.1 Downloading websockets-15.0.1-cp311-cp311-musllinux_1_2_x86_64.whl (181 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.1101216Z out: #17 100.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.9/181.9 kB 28.7 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.1102099Z out: #17 100.1 Downloading argparse-1.4.0-py2.py3-none-any.whl (23 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.1224899Z out: #17 100.4 Downloading certifi-2025.7.14-py3-none-any.whl (162 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.3571369Z out: #17 100.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 162.7/162.7 kB 67.6 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.3604192Z out: #17 100.6 Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.6076716Z out: #17 100.6 Downloading future-1.0.0-py3-none-any.whl (491 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.6077823Z out: #17 100.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 491.3/491.3 kB 14.4 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:02.8569988Z out: #17 100.9 Downloading gevent-25.5.1-cp311-cp311-musllinux_1_2_x86_64.whl (2.1 MB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.1073209Z out: #17 101.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 9.0 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.1074007Z out: #17 101.1 Downloading PySocks-1.7.1-py3-none-any.whl (16 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.1074711Z out: #17 101.1 Downloading requests-2.32.4-py3-none-any.whl (64 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.1075800Z out: #17 101.1    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.8/64.8 kB 158.5 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.1090257Z out: #17 101.4 Downloading tldextract-5.3.0-py3-none-any.whl (107 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.3577110Z out: #17 101.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.4/107.4 kB 85.4 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.6108801Z out: #17 101.7 Downloading charset_normalizer-3.4.2-cp311-cp311-musllinux_1_2_x86_64.whl (148 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.6110253Z out: #17 101.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 148.0/148.0 kB 14.1 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.6111063Z out: #17 101.7 Downloading filelock-3.18.0-py3-none-any.whl (16 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.6112000Z out: #17 101.7 Downloading greenlet-3.2.3-cp311-cp311-musllinux_1_1_x86_64.whl (1.1 MB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.8576597Z out: #17 101.7    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 42.9 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.8577535Z out: #17 101.9 Downloading requests_file-2.1.0-py2.py3-none-any.whl (4.2 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.8578266Z out: #17 101.9 Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.8578877Z out: #17 101.9 Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.8579612Z out: #17 101.9    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 129.8/129.8 kB 55.4 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:03.8602401Z out: #17 102.1 Downloading zope_event-5.1.1-py3-none-any.whl (7.0 kB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:04.1071825Z out: #17 102.1 Downloading setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:04.1124404Z out: #17 102.4    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 46.4 MB/s eta 0:00:00
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:06.1373971Z out: #17 104.4 Building wheels for collected packages: zope.interface
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:06.6147673Z out: #17 104.9   Building wheel for zope.interface (pyproject.toml): started
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:20.3617383Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:20.3618094Z out: #20 [frontend builder 4/6] RUN npm install --silent
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:20.3618641Z out: #20 DONE 117.1s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:20.6089688Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:20.8831726Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:20.8832314Z out: #21 [frontend builder 5/6] COPY . .
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:25.1426728Z out: #21 DONE 4.5s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:25.1427806Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:25.3579372Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:25.3580232Z out: #22 [frontend builder 6/6] RUN npm run build
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:55.1142495Z out: #22 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:55.1143264Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:55.1144333Z out: #17 152.4   Building wheel for zope.interface (pyproject.toml): finished with status 'done'
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:55.3573103Z out: #17 152.6   Created wheel for zope.interface: filename=zope.interface-7.2-cp311-cp311-linux_x86_64.whl size=255909 sha256=dfcf73452fe62d7e45b9a54be8092a4b90afce0b8af3b61608c4288856caea9f
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:55.3574945Z out: #17 152.6   Stored in directory: /tmp/pip-ephem-wheel-cache-5tfufza8/wheels/56/c5/6a/f7214e274038165ba935d49a35704273158b50220a940448f0
+deploy	Deploy to Ubuntu VM	2025-07-31T01:15:55.3576288Z out: #17 153.1 Successfully built zope.interface
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:04.1647951Z out: #17 162.4 Installing collected packages: argparse, websockets, uvloop, urllib3, typing-extensions, sniffio, setuptools, pyyaml, python-multipart, python-dotenv, PySocks, idna, httptools, h11, greenlet, future, filelock, colorama, click, charset_normalizer, certifi, annotated-types, zope.interface, zope.event, uvicorn, requests, pydantic-core, httpcore, anyio, watchfiles, starlette, requests-file, pydantic, httpx, gevent, tldextract, fastapi, cors
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:06.8572403Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:06.8581837Z out: #22 [frontend builder 6/6] RUN npm run build
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:06.8582541Z out: #22 31.50 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:06.8750914Z out: #22 31.50 > helloworld-0731-frontend@0.0.0 build
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:06.8751556Z out: #22 31.50 > vite build
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:06.8752047Z out: #22 31.50 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:08.1135998Z out: #22 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:08.1136978Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:08.1138024Z out: #17 166.1   WARNING: The script websockets is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:08.1139217Z out: #17 166.1   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:15.8810208Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:15.8810741Z out: #22 [frontend builder 6/6] RUN npm run build
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:15.8811254Z out: #22 50.75 vite v5.4.19 building for production...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:18.3779658Z out: #22 53.25 transforming...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:48.6333154Z out: #22 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:48.6333969Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:48.6335003Z out: #17 206.9   WARNING: The script dotenv is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:16:48.6336552Z out: #17 206.9   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:02.3694796Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:02.3695399Z out: #22 [frontend builder 6/6] RUN npm run build
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:02.3696615Z out: #22 97.24 ✓ 32 modules transformed.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:07.1179023Z out: #22 102.0 rendering chunks...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:07.3627031Z out: #22 102.2 computing gzip size...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:08.1328502Z out: #22 103.0 dist/index.html                  3.30 kB │ gzip:  1.06 kB
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:08.3588126Z out: #22 103.0 dist/assets/index-DcQeRcq2.js  146.59 kB │ gzip: 47.44 kB
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:08.3588938Z out: #22 103.0 ✓ built in 51.01s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:09.8873313Z out: #22 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:09.8874211Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:09.8875768Z out: #17 228.1   WARNING: The scripts futurize and pasteurize are installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:09.8877683Z out: #17 228.1   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:15.1086549Z out: #17 233.4   WARNING: The script normalizer is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:15.1087917Z out: #17 233.4   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:16.1096801Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:16.1097404Z out: #22 [frontend builder 6/6] RUN npm run build
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:16.1097986Z out: #22 DONE 110.3s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:16.3578376Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:24.3584049Z out: #17 242.4   WARNING: The script uvicorn is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:24.3585774Z out: #17 242.4   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:30.6081578Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:30.6082383Z out: #23 [frontend production 2/4] COPY --from=builder /app/dist /usr/share/nginx/html
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:34.8573216Z out: #23 DONE 5.5s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:34.8574349Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:34.8575476Z out: #17 251.1   WARNING: The script watchfiles is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:34.8576682Z out: #17 251.1   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:36.6165846Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:36.6166599Z out: #24 [frontend production 3/4] COPY nginx.conf /etc/nginx/nginx.conf
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:36.6167320Z out: #24 DONE 2.0s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:36.8577901Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:38.1074645Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:38.1077038Z out: #25 [frontend production 4/4] RUN adduser -D -s /bin/false -G nginx nginxuser &&     chown -R nginxuser:nginx /usr/share/nginx/html &&     chown -R nginxuser:nginx /var/cache/nginx &&     chown -R nginxuser:nginx /var/log/nginx &&     chown -R nginxuser:nginx /etc/nginx/conf.d &&     touch /var/run/nginx.pid &&     chown -R nginxuser:nginx /var/run/nginx.pid
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:44.8845796Z out: #25 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:44.8846447Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:44.8847230Z out: #17 263.1   WARNING: The script httpx is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:44.8848107Z out: #17 263.1   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:55.3852516Z out: #17 273.6   WARNING: The script tldextract is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:55.3853794Z out: #17 273.6   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:57.3794573Z out: #17 275.6   WARNING: The script fastapi is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:57.3795919Z out: #17 275.6   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:58.6232693Z out: #17 276.9   WARNING: The script cors is installed in '/root/.local/bin' which is not on PATH.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:17:58.6233898Z out: #17 276.9   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:06.6169806Z out: #17 284.9 Successfully installed PySocks-1.7.1 annotated-types-0.7.0 anyio-4.9.0 argparse-1.4.0 certifi-2025.7.14 charset_normalizer-3.4.2 click-8.2.1 colorama-0.4.6 cors-1.0.1 fastapi-0.115.6 filelock-3.18.0 future-1.0.0 gevent-25.5.1 greenlet-3.2.3 h11-0.16.0 httpcore-1.0.9 httptools-0.6.4 httpx-0.28.1 idna-3.10 pydantic-2.10.4 pydantic-core-2.27.2 python-dotenv-1.0.1 python-multipart-0.0.20 pyyaml-6.0.2 requests-2.32.4 requests-file-2.1.0 setuptools-80.9.0 sniffio-1.3.1 starlette-0.41.3 tldextract-5.3.0 typing-extensions-4.14.1 urllib3-2.5.0 uvicorn-0.32.1 uvloop-0.21.0 watchfiles-1.1.0 websockets-15.0.1 zope.event-5.1.1 zope.interface-7.2
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:06.8609662Z out: #17 284.9 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:07.3677190Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:07.3678942Z out: #25 [frontend production 4/4] RUN adduser -D -s /bin/false -G nginx nginxuser &&     chown -R nginxuser:nginx /usr/share/nginx/html &&     chown -R nginxuser:nginx /var/cache/nginx &&     chown -R nginxuser:nginx /var/log/nginx &&     chown -R nginxuser:nginx /etc/nginx/conf.d &&     touch /var/run/nginx.pid &&     chown -R nginxuser:nginx /var/run/nginx.pid
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:07.3680618Z out: #25 DONE 30.2s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:07.6077763Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:08.1230917Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:08.1231786Z out: #26 [frontend] exporting to image
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:08.1232365Z out: #26 exporting layers
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:09.3781102Z out: #26 exporting layers 1.7s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:09.6074108Z out: #26 writing image sha256:f31130b4a2065e05ab4b3e50211abe016aac7694af6408b490c89ce084878791
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:09.6301231Z out: #26 writing image sha256:f31130b4a2065e05ab4b3e50211abe016aac7694af6408b490c89ce084878791 0.2s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:09.6302186Z out: #26 naming to docker.io/library/helloworld-0731-frontend
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:10.4074339Z out: #26 naming to docker.io/library/helloworld-0731-frontend 0.2s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:10.6131368Z out: #26 DONE 2.9s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:10.6132370Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:10.6132990Z out: #17 288.1 
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:10.6133455Z out: #17 288.1 [notice] A new release of pip is available: 24.0 -> 25.2
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:10.6134033Z out: #17 288.1 [notice] To update, run: pip install --upgrade pip
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:15.1224419Z out: #17 ...
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:15.1225021Z out: #27 [frontend] resolving provenance for metadata file
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:19.1287762Z out: #27 DONE 4.0s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:19.1288609Z out: #17 [backend builder 5/5] RUN pip install --user --no-cache-dir -r requirements.txt
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:32.1291924Z out: #17 DONE 310.4s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:46.6437364Z out: #28 [backend production 2/5] COPY --from=builder /root/.local /root/.local
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:55.6224654Z out: #28 DONE 9.0s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:18:56.1075161Z out: #29 [backend production 3/5] RUN adduser -D -s /bin/sh appuser
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:01.1373520Z out: #29 DONE 5.5s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:01.3597309Z out: #30 [backend production 4/5] WORKDIR /app
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:01.6360954Z out: #30 DONE 0.3s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:01.8608601Z out: #31 [backend production 5/5] COPY --chown=appuser:appuser . .
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:02.3791930Z out: #31 DONE 0.5s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:02.6088742Z out: #32 [backend] exporting to image
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:02.6089700Z out: #32 exporting layers
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:13.1094673Z out: #32 exporting layers 10.5s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:13.1096025Z out: #32 writing image sha256:c1c16c1a47a34b0604de3fedcfc9375cea8edfdb62a6b52d7a400e61542a0a27
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:13.3575028Z out: #32 writing image sha256:c1c16c1a47a34b0604de3fedcfc9375cea8edfdb62a6b52d7a400e61542a0a27 0.2s done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:13.3576361Z out: #32 naming to docker.io/library/helloworld-0731-backend done
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:13.3577005Z out: #32 DONE 10.8s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:13.6078011Z out: #33 [backend] resolving provenance for metadata file
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:14.1506071Z out: #33 DONE 0.7s
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:15.0071907Z err:  helloworld-0731-backend  Built
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:15.0072591Z err:  helloworld-0731-frontend  Built
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:22.3739615Z err: time="2025-07-31T01:19:22Z" level=warning msg="/home/***/helloworld-0731/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion"
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:22.3876116Z err: no such service: helloworld-0731-backend
+deploy	Deploy to Ubuntu VM	2025-07-31T01:19:22.3950101Z 2025/07/31 01:19:22 Process exited with status 1
+deploy	Post Checkout code	﻿2025-07-31T01:19:22.4891312Z Post job cleanup.
+deploy	Post Checkout code	2025-07-31T01:19:22.5821817Z [command]/usr/bin/git version
+deploy	Post Checkout code	2025-07-31T01:19:22.5862149Z git version 2.50.1
+deploy	Post Checkout code	2025-07-31T01:19:22.5906196Z Temporarily overriding HOME='/home/runner/work/_temp/b9e95d31-076b-42a3-8bec-d459024f7f0d' before making global git config changes
+deploy	Post Checkout code	2025-07-31T01:19:22.5908798Z Adding repository directory to the temporary git global config as a safe directory
+deploy	Post Checkout code	2025-07-31T01:19:22.5920320Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/helloworld-0731/helloworld-0731
+deploy	Post Checkout code	2025-07-31T01:19:22.5956356Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+deploy	Post Checkout code	2025-07-31T01:19:22.5990004Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+deploy	Post Checkout code	2025-07-31T01:19:22.6229413Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+deploy	Post Checkout code	2025-07-31T01:19:22.6251123Z http.https://github.com/.extraheader
+deploy	Post Checkout code	2025-07-31T01:19:22.6266902Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+deploy	Post Checkout code	2025-07-31T01:19:22.6299184Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+deploy	Complete job	﻿2025-07-31T01:19:22.6661541Z Cleaning up orphan processes
