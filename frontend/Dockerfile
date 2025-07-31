@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # 의존성 설치
-RUN npm ci --silent
+RUN npm install --silent
 
 # 소스코드 복사
 COPY . .
